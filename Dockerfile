@@ -9,6 +9,10 @@ RUN pip3 install PyYAML
 
 COPY feed.py /usr/bin/feed.py
 
-COPY ./entrypoint.sh /etc/entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/etc/entrypoint.sh"]
+RUN echo 'we are running some # of cool things'
+
+RUN ls -la /
+
+ENTRYPOINT ["/entrypoint.sh"]
